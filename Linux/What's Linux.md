@@ -12,4 +12,5 @@ UNIXをもとにLinus Torvalds氏により作られたのがLinux。
 
 ## 参考
 [Linux入門](http://cai.cs.shinshu-u.ac.jp/sugsi/Lecture/linux/h_top.html)
+
 [Linux標準教科書](https://linuc.org/textbooks/linux/)
