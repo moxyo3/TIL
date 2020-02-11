@@ -1,4 +1,4 @@
-#概要
+# 概要
 研究用やサーバ用のOSであったUNIXをパソコン上で動くようにしたものがPC-UNIX。
 UNIXをもとにLinus Torvalds氏により作られたのがLinux。
 
