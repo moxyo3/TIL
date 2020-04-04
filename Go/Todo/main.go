@@ -1,14 +1,23 @@
 package main
 
 import(
-  "net/http"
+	"encoding/json"
+	"net/http"
 )
 
-func main(){
+func main() {
 	http.Handle("/", http.FileServer(http.Dir(".")))
-	http.HandleFunc("/todos", fun(w http.ResponseWriter, r *http.Request))
-  type Todo struct{
-   ID int
-   name string
+	http.HandleFunc("/todos", func(w http.ResponseWriter, r *http.Request)) {
+	createTodo(w,r)
+	}
+
+  type Todo struct {
+   ID int		`json:"id"`
+   name string	`json:"name"`
+   Todo string	`json:"todo"`
   }
+}
+
+func createTodo(w ResponseWriter, r *http.Request) {
+	var todo Todo
 }
