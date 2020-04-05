@@ -15,7 +15,7 @@ type Todo struct {
 
 func main() {
 	http.Handle("/", http.FileServer(http.Dir(".")))
-	http.HandleFunc("/Todos", func(w http.ResponseWriter, r *http.Request){
+	http.HandleFunc("/Todo", func(w http.ResponseWriter, r *http.Request){
 	createTodo(w,r)
 	})
 
