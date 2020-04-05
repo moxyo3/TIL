@@ -1,5 +1,3 @@
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/moxyo3/TIL) 
-
 # TILとは
 「Today I Learned」の略。
 GitHubにTILリポジトリを作成して今日学んだことを書いていく。
