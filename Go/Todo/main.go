@@ -48,7 +48,6 @@ func createTodo(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if _, err := db.Exec("insert into todos (name, todo) values (?, ?)", todo.Name, todo.Todo); err !=
-	http.Error(w, err.Error(), 500)
+	if _, err := db.Exec("insert into todos (name, todo) values (?, ?)", todo.Name, todo.Todo); err != http.Error(w, err.Error(), 500)
 	return
 }
