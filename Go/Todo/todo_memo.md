@@ -18,6 +18,7 @@
 
 - Handlerインターフェース
 HTTPリクエストを受け取ってResponseを返す
+ResponseWriterにリクエストを書き込む
 ServeHTTP(ReaponseWriter, *Request)を定義するインターフェース
 
 - http.Handle
