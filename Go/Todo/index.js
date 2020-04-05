@@ -3,6 +3,8 @@ function createTodo(){
   //nameとtodoから取得して定数に格納、戻り値はオブジェクト
   const name = document.getElementById("name")
   const todo = document.getElementById("todo")
+  console.log(name)
+  console.log(todo)
 
   const form = {
       name: name.value,
@@ -27,5 +29,9 @@ function createTodo(){
     }).catch((err) => {
         console.log(err);
     })
+  }
+
+  function getTodo(){
+
   }
 
