@@ -5,8 +5,8 @@ function createTodo(){
   const todo = document.getElementById("todo")
 
   const form = {
-      "name": name.value,
-      "todo": todo.value
+      name: name.value,
+      todo: todo.value,
   }
 
   //リソースの取得
