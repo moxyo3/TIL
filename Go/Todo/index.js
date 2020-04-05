@@ -1,13 +1,12 @@
 //登録ボタンの処理
 function createTodo(){
   //nameとtodoから取得して定数に格納、戻り値はオブジェクト
-  var name = document.getElementById("name").value;
-  var todo = document.getElementById("todo").value;
-
+  const name = document.getElementById("name")
+  const todo = document.getElementById("todo")
 
   const form = {
-      name: name.value,
-      todo: todo.value
+      "name": name.value,
+      "todo": todo.value
   }
 
   //リソースの取得
