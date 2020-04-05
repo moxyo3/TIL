@@ -27,7 +27,7 @@ func main() {
 	//defer:関数の終了時にdbクローズ
 	defer db.Close()
 
-	if _, err := db.Exec("create table if not exists todos(id integer primary key aoutoincrement, name varchar(255), todo varchar(255))"); err != nil{
+	if _, err := db.Exec("create table if not exists todos(id integer primary key autoincrement, name varchar(255), todo varchar(255))"); err != nil{
 		log.Fatal(err)
 	}
 
@@ -47,4 +47,8 @@ func createTodo(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), 500)
 		return
 	}
+
+	if _, err := db.Exec("insert into todos (name, todo) values (?, ?)", todo.Name, todo.Todo): err !=
+	http.Error(w, err.Error(), 500)
+	return
 }
