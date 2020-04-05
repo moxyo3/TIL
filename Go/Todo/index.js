@@ -5,8 +5,8 @@ function createTodo(){
   const name = document.getElementById("name");
   const todo = document.getElementById("todo");
 
-  Console.log(name.value);
-  Console.log(todo.value);
+  console.log(name.value);
+  console.log(todo.value);
 
   const form = {
       name: name.value,
