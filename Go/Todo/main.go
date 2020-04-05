@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"net/http"
+	"log"
 )
 
 //jsonを格納する構造体
@@ -17,6 +18,9 @@ func main() {
 	http.HandleFunc("/todos", func(w http.ResponseWriter, r *http.Request){
 	createTodo(w,r)
 	})
+
+	log.Println("start http server :8080")
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 
