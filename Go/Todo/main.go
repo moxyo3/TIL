@@ -49,7 +49,8 @@ func createTodo(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//jsonから受け取ったnameとtodoをdbにinsert
-	if _, err := db.Exec("insert into todos (name, todo) values (?, ?)", todo.Name, todo.Todo);
-		err != http.Error(w, err.Error(), 500)
+	if _, err := db.Exec("insert into todos (name, todo) values (?, ?)", todo.Name, todo.Todo); err != nil{
+		http.Error(w, err.Error(), 500)
 		return
+	}
 }
