@@ -1,5 +1,13 @@
 # todoアプリ作成メモ
 
+## index.js
+Fetch APIにネット通信を含むリソース取得のためのインターフェースが定義されている
+→RequestとResponse
+
+### fetch()メソッド
+取得したいリソースのパスを指定すると、成功か失敗かに関わらずリクエストに対するResponseに解決できるPromiseを返す
+fetch()の引数はRequest()コンストラクタと同じ
+
 ## main.go
 
 ### main関数
@@ -45,3 +53,4 @@ json自体が複雑な入れ子になっていると、結果を受け取る構�
 
 ### HTTPリクエスト
 HTTPリクエスト(レスポンス？)のPOSTメソッドのBODYにjsonの文字列が格納される
+
