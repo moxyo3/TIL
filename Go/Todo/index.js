@@ -38,7 +38,7 @@ function createTodo(){
   function getTodo(){
       fetch("/Todo").then((response) => {
           //responseをjsonとしてパース
-          return response.json()
+          return response.json();
       }).then((todos)=> {
           //todosの値を順番にtodoに入れて反復処理、データが入っているとき後ろに削除ボタンを出す
           for (const todo of todos){
@@ -56,15 +56,15 @@ function createTodo(){
       //取得したtodoの先頭にヘッダー行追加
       todos.unshift({id:"id",name:"name",todo:"todo",oparation:"operation"});
 
-      //for(const todo of todos){
-        //  const tr = document.createElement("tr");
+      for(const todo of todos){
+          const tr = document.createElement("tr");
           //values：値を配列にして、cを順番に処理
-          //for (const c of Object.values(todo)){
-            //  if(c === "button"){
-              //    const button = document.createElement("button");
-              //    button.textContent("削除");
-              //}
-          //}
-      //}
+          for (const c of Object.values(todo)){
+              if(c === "button"){
+                  const button = document.createElement("button");
+                  button.textContent("削除");
+              }
+          }
+      }
   }
 
