@@ -35,7 +35,7 @@ function createTodo(){
 
   //fetch指定なければデフォルトはGET
   function getTodo(){
-      fetch("/Todo").then((response) => {
+      fetch("/").then((response) => {
           return response.json();
       }).then((todos)=> {
           //todosの値を順番にtodoに入れて反復処理、データが入っているとき後ろに削除ボタンを出す
