@@ -63,7 +63,6 @@ function createTodo(){
               if(c === "button"){
                   const button = document.createElement("button");
                   button.textContent("削除");
-                  button.onclick(deleteTodo(todo))
               }
           }
       }
