@@ -4,7 +4,7 @@
 Fetch APIにネット通信を含むリソース取得のためのインターフェースが定義されている
 →RequestとResponse
 
-### fetch()メソッド
+### fetch()メソッド　fetch：読み込む
 取得したいリソースのパスを指定すると、成功か失敗かに関わらずリクエストに対するResponseに解決できるPromiseを返す
 fetch()の引数はRequest()コンストラクタと同じ
 
