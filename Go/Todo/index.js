@@ -37,7 +37,7 @@ function createTodo(){
   function getTodo(){
       fetch("/Todo").then((response) => {
           //responseをjsonとしてパース
-          return response.json();
+          return response.json()
       }).then((todos)=> {
           //todosの値を順番にtodoに入れて反復処理、データが入っているとき後ろに削除ボタンを出す
           for (const todo of todos){
