@@ -34,6 +34,7 @@ function createTodo(){
   }
 
   //fetch指定なければデフォルトはGET
+  //サーバーからデータを取得
   function getTodo(){
       fetch("/Todo").then((response) => {
           //responseをjsonとしてパース
@@ -43,28 +44,27 @@ function createTodo(){
           for (const todo of todos){
               todo.button = "button";
           }
-          //Todo一覧を取得してtodosに格納、順番に一覧に追加
           makeTodoTable(todos)
       }).catch((err)=>{
           console.log(err);
       })
   }
-
+//取得したtodoからテーブル作成
   function makeTodoTable(todos){
       const table = document.getElementById("table");
       table.innerHTML = "";
       //取得したtodoの先頭にヘッダー行追加
       todos.unshift({id:"id",name:"name",todo:"todo",oparation:"operation"});
 
-      for(const todo of todos){
-          const tr = document.createElement("tr");
+      //for(const todo of todos){
+        //  const tr = document.createElement("tr");
           //values：値を配列にして、cを順番に処理
-          for (const c of Object.values(todo)){
-              if(c === "button"){
-                  const button = document.createElement("button");
-                  button.textContent("削除");
-              }
-          }
-      }
+          //for (const c of Object.values(todo)){
+            //  if(c === "button"){
+              //    const button = document.createElement("button");
+              //    button.textContent("削除");
+              //}
+          //}
+      //}
   }
 
