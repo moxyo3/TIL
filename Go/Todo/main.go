@@ -63,7 +63,7 @@ func createTodo(w http.ResponseWriter, r *http.Request) {
 }
 
 func getTodo(w http.ResponseWriter, r *http.Request){
-	todos := []Todos{}
+	todos := []Todo{}
 	rows, err := db.Query("select * from todos")
 	if err != nil {
 		log.Fatal(err)
@@ -78,10 +78,12 @@ func getTodo(w http.ResponseWriter, r *http.Request){
 		)
 
 		if err := rows.Scan(&id, &name, &todo); err != nil{
-			http.Error(w, err.Erro(), 500)
+			http.Error(w, err.Error(), 500)
 			return
 		}
 		
 		todos = append(todos, Todo{ID: id, Name: name, Todo: todo})
 	}
 }
+
+func deleteTodo(){}
