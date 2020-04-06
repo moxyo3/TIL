@@ -86,4 +86,4 @@ func getTodo(w http.ResponseWriter, r *http.Request){
 	}
 }
 
-func deleteTodo(){}
+func deleteTodo(w http.ResponseWriter, r *http.Request){}
