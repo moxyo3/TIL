@@ -39,9 +39,8 @@ function createTodo(){
       fetch("/todos").then((response) => {
           //responseをjsonとしてパース
           return response.json();
-      }).then((todos)=> {
-          makeTodoTable(todos)
-      }).catch((err)=>{
+      }).then(makeTodoTable(todos)
+      ).catch((err)=>{
           console.log(err);
       })
   }
