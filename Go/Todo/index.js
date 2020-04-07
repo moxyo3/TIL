@@ -23,7 +23,7 @@ function createTodo(){
     }).then((response) =>  {
         if (response.ok){
             alert("登録しました");
-            console.log(form);
+            //console.log(form);
             getTodo();
         } else {
             alert("登録失敗しました");
