@@ -23,14 +23,13 @@ function createTodo(){
     }).then((response) =>  {
         if (response.ok){
             alert("登録しました");
-            //console.log(form);
             getTodo();
         } else {
             alert("登録失敗しました");
         }
     }).catch((err) => {
         console.log(err);
-    });
+    })
   }
 
   //fetch指定なければデフォルトはGET
@@ -50,8 +49,8 @@ function createTodo(){
 
 //取得したtodoからテーブル作成
   function makeTodoTable(todos){
-      alert("tableつくるよ！")
       const table = document.getElementById("table");
+        const td = document.createElement("td");
       table.innerHTML = "";
       //取得したtodoの先頭にヘッダー行追加
       todos.unshift({id:"id",name:"name",todo:"todo",oparation:"operation"});
@@ -78,7 +77,6 @@ function createTodo(){
                   }
                   tr.appendChild(button)
               } else {
-                const td = document.createElement("td");
                 td.textContent = c;
                 tr.appendChild(td);
               }
