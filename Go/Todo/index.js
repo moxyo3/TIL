@@ -50,8 +50,6 @@ function createTodo(){
 //取得したtodoからテーブル作成
   function makeTodoTable(todos){
       const table = document.getElementById("table");
-        const td = document.createElement("td");
-        const button = document.createElement("button")
       table.innerHTML = "";
       //取得したtodoの先頭にヘッダー行追加
       todos.unshift({id:"id",name:"name",todo:"todo",oparation:"operation"});
@@ -61,7 +59,7 @@ function createTodo(){
           //values：値を配列にして、cを順番に処理
           for (const c of Object.values(todo)){
               if (c === "button"){
-                  const tr = document.createElement("tr");
+                  const button = document.createElement("button")
                   button.textContent = "削除";
                   button.onclick = function(){
                       fetch(`/todos?id=&{todo.id}`,{
@@ -78,11 +76,12 @@ function createTodo(){
                   }
                   tr.appendChild(button)
               } else {
+                const td = document.createElement("td");
                 td.textContent = c;
                 tr.appendChild(td);
               }
             }
-            table.appendChild(td);
+            table.appendChild(tr);
         }
       }
     
