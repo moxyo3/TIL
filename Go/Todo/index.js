@@ -51,6 +51,7 @@ function createTodo(){
   function makeTodoTable(todos){
       const table = document.getElementById("table");
         const td = document.createElement("td");
+        const button = document.createElement("button")
       table.innerHTML = "";
       //取得したtodoの先頭にヘッダー行追加
       todos.unshift({id:"id",name:"name",todo:"todo",oparation:"operation"});
