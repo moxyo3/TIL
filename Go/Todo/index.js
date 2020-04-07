@@ -40,13 +40,6 @@ function createTodo(){
           //responseをjsonとしてパース
           return response.json();
       }).then((todos)=> {
-          //todosの値を順番にtodoに入れて反復処理、データが入っているとき後ろに削除ボタンを出す
-          for (const todo of todos){
-              todo.button = "button";
-          }
-
-          //Todo一覧を取得してtodosに格納、順番に一覧に追加
-
           makeTodoTable(todos)
       }).catch((err)=>{
           console.log(err);
