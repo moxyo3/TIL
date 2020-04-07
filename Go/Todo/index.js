@@ -19,7 +19,7 @@ function createTodo(){
           'Content-Type': 'application/json',
       },
       //オブジェクトをJSONに変換、responseを引数に渡しアロー関数に処理内容
-      body: JSON.stringify(form) 
+      body: JSON.stringify(form) ,
     }).then((response) =>  {
         if (response.ok){
             alert("登録しました");
@@ -41,7 +41,9 @@ function createTodo(){
       }).then((todos) => {
           for (const todo of todos){
               todo.button = "button";
+              alert(todo);
           }
+          makeTodoTable(todos);
       }).catch((err)=>{
           console.log(err);
       })
