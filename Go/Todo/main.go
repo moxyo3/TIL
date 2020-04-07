@@ -35,11 +35,11 @@ func main() {
 	http.HandleFunc("/todos", func(w http.ResponseWriter, r *http.Request){
 		switch r.Method{
 		case http.MethodPost:
-			createTodo(w,r);
+			createTodo(w,r)
 		case http.MethodGet:
-			getTodo(w,r);
+			getTodo(w,r)
 		case http.MethodDelete:
-			deleteTodo(w,r);
+			deleteTodo(w,r)
 		}
 	})
 

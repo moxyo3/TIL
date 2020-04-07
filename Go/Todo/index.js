@@ -42,7 +42,6 @@ function createTodo(){
           for (const todo of todos){
               todo.button = "button";
           }
-          makeTodoTable(todos);
       }).catch((err)=>{
           console.log(err);
       })
