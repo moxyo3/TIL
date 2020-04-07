@@ -48,6 +48,7 @@ function createTodo(){
 
 //取得したtodoからテーブル作成
   function makeTodoTable(todos){
+      alert("tableつくるよ！")
       const table = document.getElementById("table");
       table.innerHTML = "";
       //取得したtodoの先頭にヘッダー行追加
