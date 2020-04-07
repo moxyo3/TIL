@@ -87,4 +87,15 @@ func getTodo(w http.ResponseWriter, r *http.Request){
 	}
 }
 
-func deleteTodo(w http.ResponseWriter, r *http.Request){}
+func deleteTodo(w http.ResponseWriter, r *http.Request){
+	id := r.URL.Query().Get("id");
+	if (id == ""){
+		http.Error(w,"id parameter is not found", 500)
+		return
+	}
+
+	if _, err := db.Exec("delete from todos where id = ?", id) ; err != nil{
+		http.Error(w, err.Error(), 500)
+		return
+	}
+}

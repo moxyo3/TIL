@@ -37,10 +37,13 @@ function createTodo(){
   //サーバーからデータを取得
   function getTodo(){
       fetch("/todos").then((response) => {
-          //responseをjsonとしてパース
           return response.json();
-      }).then(makeTodoTable(todos)
-      ).catch((err)=>{
+      }).then((todos) => {
+          for (const todo of todos){
+              todo.button = "button";
+          }
+          makeTodoTable(todos);
+      }).catch((err)=>{
           console.log(err);
       })
   }
@@ -57,10 +60,31 @@ function createTodo(){
           const tr = document.createElement("tr");
           //values：値を配列にして、cを順番に処理
           for (const c of Object.values(todo)){
-                  const td = document.createElement("td");
-                  td.textContent = c;
-                  tr.appendChild(td);
+              if (c === "button"){
+                  const tr = document.createElement("tr");
+                  button.textContent = "削除";
+                  button.onclick = function(){
+                      fetch(`/todos?id=&{todo.id}`,{
+                          method: 'DELETE',
+                      }).then((response)=> {
+                          if (response.ok){
+                              alert("削除しました");
+                          } else {
+                              alert("削除失敗しました");
+                          }
+                      }).catch((err)=> {
+                          console.log(err);
+                      })
+                  }
+                  tr.appendChild(button)
+              } else {
+                const td = document.createElement("td");
+                td.textContent = c;
+                tr.appendChild(td);
               }
+            }
+            table.appendChild(td);
         }
-          table.appendChild(tr);
       }
+    
+      getTodo();
