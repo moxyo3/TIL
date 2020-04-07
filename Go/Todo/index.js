@@ -36,11 +36,11 @@ function createTodo(){
   //fetch指定なければデフォルトはGET
   //サーバーからデータを取得
   function getTodo(){
-      fetch("/todos").then(response.json()
-      ).then((todos) => {
+      fetch("/todos").then((response) => {
+          todos = response.json();
+      }).then((todos) => {
           for (const todo of todos){
               todo.button = "button";
-              alert(todo);
           }
           makeTodoTable(todos);
       }).catch((err)=>{
