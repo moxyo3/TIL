@@ -32,7 +32,7 @@ func main() {
 	}
 
 	http.Handle("/", http.FileServer(http.Dir(".")))
-	http.HandleFunc("/Todo", func(w http.ResponseWriter, r *http.Request){
+	http.HandleFunc("/todos", func(w http.ResponseWriter, r *http.Request){
 		switch r.Method{
 		case http.MethodPost:
 			createTodo(w,r);
@@ -49,7 +49,7 @@ func main() {
 
 
 func createTodo(w http.ResponseWriter, r *http.Request) {
-	var Todo Todo
+	var todo Todo
 	if err := json.NewDecoder(r.Body).Decode(&todo); err != nil{
 		http.Error(w, err.Error(), 500)
 		return

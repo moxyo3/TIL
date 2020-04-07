@@ -13,7 +13,7 @@ function createTodo(){
   }
 
   //リソースの取得
-  fetch("/Todo",{
+  fetch("/todos",{
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ function createTodo(){
   //fetch指定なければデフォルトはGET
   //サーバーからデータを取得
   function getTodo(){
-      fetch("/Todo").then((response) => {
+      fetch("/todos").then((response) => {
           //responseをjsonとしてパース
           return response.json();
       }).then((todos)=> {
