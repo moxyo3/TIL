@@ -86,7 +86,7 @@ func getTodo(w http.ResponseWriter, r *http.Request){
 		todos = append(todos, Todo{ID: id, Name: name, Todo: todo})
 	}
 
-	if err := json.NewEncoder(w).Encode(&todo); err != nil{
+	if err := json.NewEncoder(w).Encode(&todos); err != nil{
 		http.Error(w, err.Error(), 500)
 		return
 	}
