@@ -49,7 +49,7 @@ func main() {
 
 
 func createTodo(w http.ResponseWriter, r *http.Request) {
-	var todo Todo
+	var Todo Todo
 	if err := json.NewDecoder(r.Body).Decode(&todo); err != nil{
 		http.Error(w, err.Error(), 500)
 		return
