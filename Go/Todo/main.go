@@ -33,7 +33,14 @@ func main() {
 
 	http.Handle("/", http.FileServer(http.Dir(".")))
 	http.HandleFunc("/Todo", func(w http.ResponseWriter, r *http.Request){
-	createTodo(w,r)
+		switch r.Method{
+		case http.MethodPost:
+			createTodo(w,r);
+		case http.MethodGet:
+			getTodo(w,r);
+		case http.MethodDelete:
+			deleteTodo(w,r);
+		}
 	})
 
 	log.Println("start http server :8080")
@@ -55,5 +62,29 @@ func createTodo(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func getTodo(){
+
+func getTodo(w http.ResponseWriter, r *http.Request){
+	todos := []Todo{}
+	rows, err := db.Query("select * from todos")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer rows.Close()
+
+	for rows.Next(){
+		var (
+			id int
+			name string
+			todo string
+		)
+
+		if err := rows.Scan(&id, &name, &todo); err != nil{
+			http.Error(w, err.Error(), 500)
+			return
+		}
+		
+		todos = append(todos, Todo{ID: id, Name: name, Todo: todo})
+	}
 }
+
+func deleteTodo(w http.ResponseWriter, r *http.Request){}
