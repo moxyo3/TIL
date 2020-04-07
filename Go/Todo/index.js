@@ -37,7 +37,7 @@ function createTodo(){
   //サーバーからデータを取得
   function getTodo(){
       fetch("/todos").then((response) => {
-          return response.json();
+          response.json();
       }).then((todos) => {
           for (const todo of todos){
               todo.button = "button";
