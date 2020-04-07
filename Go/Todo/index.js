@@ -64,11 +64,10 @@ function createTodo(){
           const tr = document.createElement("tr");
           //values：値を配列にして、cを順番に処理
           for (const c of Object.values(todo)){
-              if(c === "button"){
-                  const button = document.createElement("button");
-                  button.textContent("削除");
+                  const td = document.createElement("td");
+                  td.textContent = c;
+                  tr.appendChild(td);
               }
-          }
+        }
+          table.appendChild(tr);
       }
-  }
-
