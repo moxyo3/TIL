@@ -10,11 +10,11 @@ function createTodo(){
   }
 
   //リソースの取得、Responseを含むpromiseを返す
-  fetch("/todos",{
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
+    fetch("/todos",{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
       //formオブジェクトをJSONに変換、responseを引数に渡しアロー関数に処理内容
       body: JSON.stringify(form) ,
     }).then((response) =>  {
@@ -27,7 +27,7 @@ function createTodo(){
     }).catch((err) => {
         console.log(err);
     })
-  }
+}
 
   //fetch指定なければデフォルトはGET
   //サーバーからデータを取得
@@ -83,4 +83,4 @@ function createTodo(){
         }
       }
     
-      getTodo();
+getTodo();
