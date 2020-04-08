@@ -62,7 +62,7 @@ function createTodo(){
                   const button = document.createElement("button")
                   button.textContent = "削除";
                   button.onclick = function(){
-                      fetch(`/todos/id=&{todo.id}`,{
+                      fetch(`/todos?id=${todo.id}`,{
                           method: 'DELETE',
                       }).then((response)=> {
                           if (response.ok){
