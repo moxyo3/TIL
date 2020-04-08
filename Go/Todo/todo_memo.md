@@ -8,6 +8,12 @@ Fetch APIにネット通信を含むリソース取得のためのインター�
 取得したいリソースのパスを指定すると、成功か失敗かに関わらずリクエストに対するResponseに解決できるPromiseを返す
 fetch()の引数はRequest()コンストラクタと同じ
 
+fetch(`/todos?id=${todo.id}`){...}
+ダブルクォートで囲むと文字列の中に変数を渡せる(${}内)
+/todos?→?以降の文字列がURLパラメータ：サーバーに情報を送るためにURLに付け加える変数
+「URL...?変数(パラメータ)=値」の形式（検索URLとかに出てくるやつ）
+(URLパラメータとは？パラメータ使用URLでの注意点)[https://www.seohacks.net/basic/terms/what-is-urlparameters/]
+
 ## main.go
 
 ### main関数
