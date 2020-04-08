@@ -67,6 +67,7 @@ function createTodo(){
                       }).then((response)=> {
                           if (response.ok){
                               alert("削除しました");
+                              getTodo();
                           } else {
                               alert("削除失敗しました");
                           }
