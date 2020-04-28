@@ -4,6 +4,8 @@
 - Ubuntu18.04
 - visual studio code
 
+[TypeScriptチュートリアル](https://qiita.com/ochiochi/items/efdaa0ae7d8c972c8103)
+
 ## TypeScriptとは
 Microsoft社によって開発されたAltJS(Alternative JavaScript)
 
