@@ -1,4 +1,4 @@
 # cookie操作
 
-[JavaScriptでcookie操作](https://qiita.com/dokkoisho/items/b415f1c9852c8fd12ec8)
+[JavaScriptでcookie処理読み・書き・削除)]
 
