@@ -1,0 +1,1 @@
+[Using the Fetch API to send and receive JSON with PHP.](https://codepen.io/dericksozo/post/fetch-api-json-php)
