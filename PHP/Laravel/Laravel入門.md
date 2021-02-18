@@ -24,3 +24,11 @@ SQLを書く必要なし
 
 [Laravel 5.5 入門として「基本のタスクリスト」を作成する](https://beiznotes.org/making-task-list-with-laravel55-1/)
 
+
+## ドキュメントルートの変更
+[Laravelのドキュメントルートを変更する](https://laraweb.net/environment/347/)
+
+## Laravelのバージョン
+ユーザー認証機能を使う場合はJetstreamを使う設定にする必要がある
+
+[Laravel8時点の新規プロジェクト作成方法](https://kawax.biz/laravel8-create-project/)
