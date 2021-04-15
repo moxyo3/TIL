@@ -27,3 +27,6 @@ th:fieldかname属性からエラーチェック時取得
 
 エラー時にエラーメッセージを表示
 
+
+### css,jsの置き場所
+src/main/resources/static内にフォルダを作成
